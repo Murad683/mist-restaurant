@@ -9,7 +9,7 @@ const navLinks = [
   { name: "Haqqımızda", path: "/experience" },
   { name: "Menyu", path: "/menu" },
   { name: "Qalereya", path: "/gallery" },
-  { name: "Əlaqə", path: "/contact" },
+  { name: "Rezervasiya", path: "/contact" },
 ];
 
 const languages = [
@@ -39,9 +39,8 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-          isScrolled ? "glass-nav py-3" : "bg-transparent py-6"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${isScrolled ? "glass-nav py-3" : "bg-transparent py-6"
+          }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -65,11 +64,10 @@ const Navbar = () => {
                 className="relative group"
               >
                 <span
-                  className={`font-mono text-sm tracking-wider uppercase transition-colors duration-300 ${
-                    location.pathname === link.path
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`font-mono text-sm tracking-wider uppercase transition-colors duration-300 ${location.pathname === link.path
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   {link.name}
                 </span>
@@ -91,11 +89,10 @@ const Navbar = () => {
             {languages.map((lang, index) => (
               <span key={lang.code} className="flex items-center">
                 <button
-                  className={`transition-colors duration-300 ${
-                    lang.active
-                      ? "text-foreground font-bold"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`transition-colors duration-300 ${lang.active
+                    ? "text-foreground font-bold"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   {lang.code}
                 </button>
@@ -141,17 +138,16 @@ const Navbar = () => {
                 >
                   <Link
                     to={link.path}
-                    className={`font-display text-3xl tracking-wide ${
-                      location.pathname === link.path
-                        ? "text-foreground"
-                        : "text-muted-foreground"
-                    }`}
+                    className={`font-display text-3xl tracking-wide ${location.pathname === link.path
+                      ? "text-foreground"
+                      : "text-muted-foreground"
+                      }`}
                   >
                     {link.name}
                   </Link>
                 </motion.div>
               ))}
-              
+
               {/* Mobile Language Switcher */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -163,11 +159,10 @@ const Navbar = () => {
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
-                    className={`transition-colors duration-300 ${
-                      lang.active
-                        ? "text-foreground font-bold"
-                        : "text-muted-foreground"
-                    }`}
+                    className={`transition-colors duration-300 ${lang.active
+                      ? "text-foreground font-bold"
+                      : "text-muted-foreground"
+                      }`}
                   >
                     {lang.code}
                   </button>

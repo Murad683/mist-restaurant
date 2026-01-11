@@ -19,8 +19,18 @@ const Contact = () => {
   };
 
   const handleWhatsAppReservation = () => {
-    const message = encodeURIComponent("Salam, rezervasiya etmək istəyirəm.");
-    window.open(`https://wa.me/994552057813?text=${message}`, "_blank");
+    const reservationMessage = `Salam, rezervasiya etmək istəyirəm.
+
+*Rezervasiya Məlumatları:*
+Ad: ${formData.name || "Qeyd olunmayıb"}
+Telefon: ${formData.phone || "Qeyd olunmayıb"}
+Tarix: ${formData.date || "Qeyd olunmayıb"}
+Saat: ${formData.time || "Qeyd olunmayıb"}
+Qonaq sayı: ${formData.guests || "Qeyd olunmayıb"}
+Qeydlər: ${formData.message || "Yoxdur"}`;
+
+    const encodedMessage = encodeURIComponent(reservationMessage);
+    window.open(`https://wa.me/994552057813?text=${encodedMessage}`, "_blank");
   };
 
   return (
@@ -28,7 +38,7 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="min-h-[50vh] flex items-center justify-center relative pt-24">
         <div className="absolute inset-0 bg-gradient-mist" />
-        
+
         <div className="container-custom relative z-10 text-center">
           <motion.p
             className="font-mono text-xs tracking-[0.3em] uppercase text-gold mb-6"
@@ -38,7 +48,7 @@ const Contact = () => {
           >
             Rezervasiya
           </motion.p>
-          
+
           <motion.h1
             className="font-display text-5xl md:text-7xl lg:text-8xl leading-tight mb-8"
             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
@@ -47,7 +57,7 @@ const Contact = () => {
           >
             Bizimlə <span className="italic">Əlaqə</span>
           </motion.h1>
-          
+
           <motion.p
             className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
@@ -73,7 +83,7 @@ const Contact = () => {
               <h2 className="font-display text-3xl md:text-4xl mb-8">
                 Bizi <span className="italic">Ziyarət Edin</span>
               </h2>
-              
+
               <div className="space-y-8 mb-12">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-mist flex items-center justify-center flex-shrink-0">
@@ -87,7 +97,7 @@ const Contact = () => {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-mist flex items-center justify-center flex-shrink-0">
                     <Phone className="w-5 h-5 text-gold" />
@@ -102,7 +112,7 @@ const Contact = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-mist flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5 text-gold" />
@@ -117,7 +127,7 @@ const Contact = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-mist flex items-center justify-center flex-shrink-0">
                     <Clock className="w-5 h-5 text-gold" />
@@ -157,7 +167,7 @@ const Contact = () => {
               <h2 className="font-display text-3xl md:text-4xl mb-8">
                 <span className="italic">Rezervasiya</span> Edin
               </h2>
-              
+
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -173,7 +183,7 @@ const Contact = () => {
                       placeholder="Ad Soyad"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block font-mono text-xs tracking-wider uppercase text-muted-foreground mb-2">
                       Əlaqə Nömrəsi
@@ -188,7 +198,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block font-mono text-xs tracking-wider uppercase text-muted-foreground mb-2">
@@ -208,7 +218,7 @@ const Contact = () => {
                       ))}
                     </select>
                   </div>
-                  
+
                   <div>
                     <label className="block font-mono text-xs tracking-wider uppercase text-muted-foreground mb-2">
                       Tarix
@@ -222,7 +232,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="block font-mono text-xs tracking-wider uppercase text-muted-foreground mb-2">
                     Saat
@@ -241,7 +251,7 @@ const Contact = () => {
                     ))}
                   </select>
                 </div>
-                
+
                 <div>
                   <label className="block font-mono text-xs tracking-wider uppercase text-muted-foreground mb-2">
                     Qeydlər
@@ -255,7 +265,7 @@ const Contact = () => {
                     placeholder="Xüsusi tələblər və ya münasibət..."
                   />
                 </div>
-                
+
                 <button
                   type="button"
                   onClick={handleWhatsAppReservation}
@@ -280,7 +290,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            8 nəfərdən çox qruplar və ya xüsusi tədbirlər üçün bizimlə birbaşa əlaqə saxlayın. 
+            8 nəfərdən çox qruplar və ya xüsusi tədbirlər üçün bizimlə birbaşa əlaqə saxlayın.
             Əvvəlcədən bildirişlə xüsusi qida tələblərini nəzərə alırıq.
           </motion.p>
         </div>

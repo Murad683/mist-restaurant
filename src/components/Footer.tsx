@@ -15,7 +15,7 @@ const Footer = () => {
               className="h-12 w-auto mb-6"
             />
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Tarixin və müasirliyin qovuşduğu məkan. Bakının İçərişəhərinin 
+              Tarixin və müasirliyin qovuşduğu məkan. Bakının İçərişəhərinin
               qəlbində sirli yemək təcrübəsi.
             </p>
           </div>
@@ -28,7 +28,7 @@ const Footer = () => {
                 { name: "Haqqımızda", path: "/experience" },
                 { name: "Menyu", path: "/menu" },
                 { name: "Qalereya", path: "/gallery" },
-                { name: "Əlaqə", path: "/contact" },
+                { name: "Rezervasiya", path: "/contact" },
               ].map((item) => (
                 <li key={item.path}>
                   <Link
